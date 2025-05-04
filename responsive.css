@@ -1,0 +1,300 @@
+/* Responsive Styles for Product Page
+ * This file contains all responsive media queries for the product page
+ */
+
+/* Mobile First Approach - Base styles are for mobile */
+
+/* Product Container - Adjusting for mobile */
+.product-container {
+    flex-direction: column;
+    padding: 10px;
+}
+
+.column {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+/* Navigation Adjustments for Mobile */
+.mobile-menu-toggle {
+    display: block;
+}
+
+.compact-nav .quick-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #232f3e;
+    flex-direction: column;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.compact-nav .quick-links.visible {
+    display: flex;
+}
+
+.compact-nav .quick-links a {
+    padding: 10px 15px;
+    width: 100%;
+    margin: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Smart Summary Cards Adjustments */
+.cards-wrapper {
+    min-height: 250px;
+}
+
+.summary-card {
+    padding: 0.75rem;
+}
+
+.card-content ul.feature-list li {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* Gallery Section Adjustments */
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.gallery-item {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Info/Details Section Adjustments */
+.specs-container {
+    flex-direction: column;
+    display: flex;
+}
+
+.specs-column {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.comparison-table-wrapper {
+    overflow-x: auto;
+}
+
+.comparison-table {
+    min-width: 500px;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.comparison-table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+.comparison-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.comparison-note {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* What's in the Box Section */
+.box-contents {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.box-item {
+    display: flex;
+    align-items: center;
+    background-color: #f8f8f8;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.item-icon {
+    margin-right: 10px;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Reviews Section Adjustments */
+.reviews-summary {
+    flex-direction: column;
+}
+
+.rating-overview {
+    flex-direction: column;
+}
+
+.big-rating-display {
+    margin-bottom: 20px;
+}
+
+.review-card {
+    padding: 15px;
+}
+
+/* Responsive Typography */
+h1.product-title {
+    font-size: 1.2rem;
+}
+
+h2.section-title {
+    font-size: 1.1rem;
+}
+
+/* Tablet Screen Sizes (768px and above) */
+@media screen and (min-width: 768px) {
+    .product-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .column.product-images,
+    .column.product-details {
+        width: calc(50% - 20px);
+    }
+    
+    .column.product-summary {
+        width: 100%;
+        order: 3;
+    }
+    
+    .mobile-menu-toggle {
+        display: none;
+    }
+    
+    .compact-nav .quick-links {
+        display: flex;
+        position: static;
+        width: auto;
+        background-color: transparent;
+        flex-direction: row;
+        padding: 0;
+        box-shadow: none;
+    }
+    
+    .gallery-item {
+        width: calc(50% - 5px);
+    }
+    
+    .specs-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .specs-column {
+        width: calc(50% - 10px);
+    }
+    
+    .reviews-summary {
+        flex-direction: row;
+    }
+    
+    h1.product-title {
+        font-size: 1.4rem;
+    }
+    
+    .box-contents {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .box-item {
+        width: calc(50% - 10px);
+    }
+
+    /* Below product sections improvements */
+    .below-product-sections {
+        padding: 0 20px;
+    }
+}
+
+/* Desktop Screen Sizes (1024px and above) */
+@media screen and (min-width: 1024px) {
+    .product-container {
+        flex-wrap: nowrap;
+    }
+    
+    .column.product-images {
+        width: 40%;
+    }
+    
+    .column.product-details {
+        width: 35%;
+    }
+    
+    .column.product-summary {
+        width: 25%;
+        order: unset;
+    }
+    
+    .gallery-item {
+        width: calc(33.33% - 7px);
+    }
+    
+    .specs-container {
+        flex-wrap: nowrap;
+    }
+    
+    .specs-column {
+        width: calc(33.33% - 10px);
+    }
+    
+    h1.product-title {
+        font-size: 1.5rem;
+    }
+    
+    .box-item {
+        width: calc(33.33% - 10px);
+    }
+}
+
+/* Large Desktop Screen Sizes (1280px and above) */
+@media screen and (min-width: 1280px) {
+    .product-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .section-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+/* Print Media Queries */
+@media print {
+    header, footer, .action-buttons, .fullscreen-view, .video-modal {
+        display: none !important;
+    }
+    
+    .product-container {
+        display: block;
+    }
+    
+    .column {
+        width: 100% !important;
+        page-break-inside: avoid;
+    }
+}

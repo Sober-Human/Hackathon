@@ -1,0 +1,190 @@
+/* Consolidated CSS file combining multiple fixes */
+
+/* ======== Nav Fixes ======== */
+/* Center quick links in the top bar */
+.nav-left {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    position: relative;
+}
+
+#nav-logo, #nav-logo-expanded {
+    position: absolute;
+    left: 15px;
+}
+
+.mobile-menu-toggle {
+    position: absolute;
+    left: 60px;
+}
+
+.quick-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.quick-links a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.quick-links a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+}
+
+.quick-links a.active {
+    background-color: #FF9900;
+    color: #111;
+    font-weight: bold;
+}
+
+/* ======== Amazon Logo Styling ======== */
+.nav-logo-link {
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    height: 30px;
+    width: 100px;
+}
+
+#nav-logo {
+    padding: 1px 8px 0 6px;
+    height: 60px;
+    width: 100px;
+}
+
+.nav-sprite {
+    background-image: url('https://m.media-amazon.com/images/G/31/gno/sprites/nav-sprite-global-1x-hm-dsk-reorg._CB405936311_.png');
+    background-repeat: no-repeat;
+}
+
+.nav-logo-base {
+    background-position: -10px -51px;
+    width: 97px;
+    height: 30px;
+    display: inline-block;
+    position: absolute;
+    top: 12px;
+    left: 0;
+}
+
+.nav-logo-ext {
+    background-position: -160px -51px;
+    width: 12px;
+    height: 30px;
+    display: inline-block;
+    position: absolute;
+    top: 12px;
+    left: 90px;
+}
+
+.nav-logo-locale {
+    color: #fff;
+    font-size: 12px;
+    position: absolute;
+    bottom: -5px;
+    right: -8px;
+    line-height: 14px;
+    font-weight: bold;
+    opacity: 0.85;
+}
+
+/* ======== Cleanup Styles ======== */
+/* Clean product title styling */
+.product-title {
+    font-size: 1.3rem;
+    line-height: 1.4;
+    color: #111;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    max-height: 2.8em; /* Limit to 2 lines */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2; /* Standard property for compatibility */
+    -webkit-box-orient: vertical;
+}
+
+/* ======== Arrow Fix Styles ======== */
+/* Critical fix for the navigation arrows in right column */
+.card-slider-container {
+    position: relative !important;
+    overflow: visible !important; /* Allow the arrows to be visible */
+    isolation: isolate;
+    height: auto !important;
+    min-height: 300px;
+}
+
+.card-nav-btn {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 100 !important;
+    width: 32px !important;
+    height: 32px !important;
+    background-color: white !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2) !important;
+    border: none !important;
+    border-radius: 50% !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.prev-btn {
+    left: 8px !important;
+}
+
+.next-btn {
+    right: 8px !important;
+}
+
+/* Ensure right column stays fixed */
+.column.product-summary {
+    position: relative !important;
+    z-index: 3 !important; /* Higher than middle column */
+    isolation: isolate !important;
+}
+
+/* Middle column with expandable sections */
+.column.product-details {
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+/* Fix for expandable sections animation */
+.expandable-sections {
+    overflow: hidden !important;
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+/* Make sure all clickable elements have proper cursor */
+.card-nav-btn,
+.indicator,
+.toggle-icon,
+.section-header,
+.variant-btn,
+.view-full-details-btn,
+#nav-toggle,
+#nav-collapse,
+.search-icon,
+.cart-icon,
+.dropup-toggle,
+.dropdown-toggle,
+.nav-logo-link,
+.thumbnail,
+.thumbnail img,
+.btn-express-checkout,
+.btn-buy-now,
+.mobile-menu-toggle {
+    cursor: pointer !important;
+}

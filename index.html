@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon: Product Details Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="card-slider.css">
+    <link rel="stylesheet" href="consolidated.css">
+    <link rel="stylesheet" href="sections.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+    </div>
+    
+    <!-- Header Section with Responsive Nav -->
+    <header>
+        <!-- Compact Navigation Bar (Initial State) -->
+        <div class="compact-nav">
+            <div class="nav-left">
+                <div class="logo" id="nav-logo">
+                    <a href="#" id="nav-logo-sprites" class="nav-logo-link" aria-label="Amazon">
+                        <span class="nav-sprite nav-logo-base"></span>
+                    </a>
+                </div>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <div class="quick-links" id="quick-links">
+                    <a href="#gallery-section">Gallery</a>
+                    <a href="#info-details-section">Info/Details</a>
+                    <a href="#reviews-section">Reviews</a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <div class="search-icon" id="search-toggle">
+                    <i class="fa fa-search"></i>
+                </div>
+                <div class="cart-icon">
+                    <i class="fa fa-shopping-cart"></i>
+                </div>
+                <div class="dropdown-toggle" id="nav-toggle">
+                    <i class="fa fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Expanded Navigation (Hidden Initially) -->
+        <div class="expanded-nav" id="expanded-nav">
+            <!-- Top Navigation Bar -->
+            <div class="top-nav">
+                <div class="nav-left">
+                    <div class="logo" id="nav-logo-expanded">
+                        <a href="#" id="nav-logo-sprites" class="nav-logo-link" aria-label="Amazon">
+                            <span class="nav-sprite nav-logo-base"></span>
+                        </a>
+                    </div>
+                    <div class="location">
+                        <span class="location-label">Delivering to Mumbai 400017</span>
+                        <a href="#" class="location-update">Update location</a>
+                    </div>
+                </div>
+                
+                <div class="nav-center">
+                    <div class="search-bar">
+                        <select class="search-category">
+                            <option>All</option>
+                        </select>
+                        <input type="text" placeholder="Search Amazon" class="search-input">
+                        <button class="search-button"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+                
+                <div class="nav-right">
+                    <div class="language">
+                        <img src="images/video_files/31S9SDwgtBL._SL75_.jpg" class="flag-icon" alt="IN">
+                        <span>EN</span>
+                    </div>
+                    <div class="account">
+                        <span class="greeting">Hello, sign in</span>
+                        <span class="account-list">Account & Lists <i class="fa fa-user-circle"></i></span>
+                    </div>
+                    <div class="orders">
+                        <span class="returns">Returns</span>
+                        <span class="orders-link">& Orders</span>
+                    </div>
+                    <div class="cart">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span class="cart-text">Cart</span>
+                    </div>
+                    <div class="dropup-toggle" id="nav-collapse">
+                        <i class="fa fa-chevron-up"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Navigation Bar -->
+            <div class="bottom-nav">
+                <div class="menu-icon">
+                    <i class="fa fa-bars"></i>
+                    <span>All</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#">Fresh</a>
+                    <a href="#">MX Player</a>
+                    <a href="#">Sell</a>
+                    <a href="#">Best Sellers</a>
+                    <a href="#">Mobiles</a>
+                    <a href="#">Electronics</a>
+                    <a href="#">Amazon Pay</a>
+                </div>
+            </div>
+            
+            <!-- Breadcrumb Navigation -->
+            <div class="breadcrumb">
+                <a href="#" class="category-parent">Electronics</a>
+                <span class="separator">›</span>
+                <a href="#" class="category-main">Smartphones & Accessories</a>
+                <span class="separator">›</span>
+                <a href="#" class="category-sub">Smartphones</a>
+                <span class="separator">›</span>
+                <a href="#" class="brand-category">Brand Products</a>
+                <span class="separator">›</span>
+                <a href="#" class="product-line">Product Line</a>
+                <span class="separator">›</span>
+                <a href="#" class="product-series">Series</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content - 3 Column Layout -->
+    <div class="product-container">
+        <!-- Column 1: Product Images + Action Buttons -->
+        <div class="column product-images">
+            <div class="main-image-container">
+                <div class="main-image" id="main-image">
+                    <img src="images/photo1.jpg" alt="Product Main Image" id="main-product-image">
+                    <div class="zoom-lens" id="zoom-lens"></div>
+                </div>
+                <div class="zoom-result" id="zoom-result"></div>
+            </div>
+            
+            <div class="thumbnail-gallery" id="gallery">
+                <div class="thumbnail active" data-image="images/photo1.jpg">
+                    <img src="images/photo1.jpg" alt="Product Thumbnail 1">
+                </div>
+                <div class="thumbnail" data-image="images/photo4.jpg">
+                    <img src="images/photo4.jpg" alt="Product Thumbnail 2">
+                </div>
+                <div class="thumbnail" data-image="images/photo5.jpg">
+                    <img src="images/photo5.jpg" alt="Product Thumbnail 3">
+                </div>
+                <!-- Video section removed -->
+            </div>
+            
+            <!-- Fullscreen Image View (hidden initially) -->
+            <div class="fullscreen-view" id="fullscreen-view">
+                <div class="fullscreen-close" id="fullscreen-close">&times;</div>
+                <div class="fullscreen-image-container" id="fullscreen-image-container">
+                    <!-- Images will be loaded here by JS -->
+                </div>
+                <div class="fullscreen-thumbnails" id="fullscreen-thumbnails">
+                    <!-- Thumbnails will be loaded here by JS -->
+                </div>
+            </div>
+
+            <!-- Video Player Modal (hidden initially) -->
+            <div class="video-modal" id="video-modal">
+                <div class="video-modal-close" id="video-modal-close">&times;</div>
+                <div class="video-container">
+                    <div class="video-placeholder">
+                        <img src="images/video_files/41k2iavaKUL._CR1,0,638,360_SR342,193__BG0,0,0__QL65_.jpg" alt="Video Placeholder">
+                        <div class="play-button-large">
+                            <img src="images/video_files/vse_play_icon_2x.png" alt="Play">
+                        </div>
+                        <div class="video-message">Video playback is not available in this demo</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Action Buttons in Left Column -->
+            <div class="left-column-actions">
+                <button class="btn-express-checkout">Express Checkout</button>
+                <button class="btn-buy-now">Buy Now <span class="button-subscript">(Standard Checkout)</span></button>
+                <button class="btn-add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+        
+        <!-- Column 2: Product Details -->
+        <div class="column product-details">
+            <!-- Core Information (Always Visible) -->
+            <div class="core-information">
+                <!-- Product Title (Truncated to 2 lines) -->
+                <h1 class="product-title"><span class="product-category">Smartphone</span>: <span class="product-name">Premium Pro Model</span> <span class="product-variant">256 GB</span></h1>
+                
+                <div class="product-branding">
+                    <a href="#" class="brand-link">Visit the <span class="brand-name">Brand</span> Store</a>
+                </div>
+                
+                <div class="product-rating" id="reviews">
+                    <div class="stars">
+                        <span class="rating-stars">4.3 ★★★★☆</span>
+                        <a href="#" class="rating-count">192 ratings</a>
+                    </div>
+                </div>
+                
+                <div class="pricing">
+                    <div class="discount-tag">-6%</div>
+                    <div class="current-price">₹1,35,900</div>
+                    <div class="original-price">M.R.P.: <span class="strike">₹1,44,900</span></div>
+                    <div class="tax-info">Inclusive of all taxes</div>
+                </div>
+                
+                <!-- Variant selection with both Storage and Color options -->
+                <div class="variant-section">
+                    <div class="variant-selection">
+                        <div class="variant-label">Storage:</div>
+                        <div class="variant-options storage-options">
+                            <button class="variant-btn">1 TB</button>
+                            <button class="variant-btn selected">256 GB</button>
+                            <button class="variant-btn">512 GB</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Color variant section removed -->
+                </div>
+
+                <div class="stock-status">
+                    <i class="fa fa-check-circle"></i>
+                    <span class="in-stock">In Stock</span>
+                </div>
+                
+                <button class="view-full-details-btn" id="view-full-details">
+                    <i class="fa fa-chevron-down"></i> View Full Details
+                </button>
+            </div>
+            
+            <!-- Expandable Sections (Hidden Initially) -->
+            <div class="expandable-sections">
+                <!-- Offers Section -->
+                <div class="expandable-section" id="offers-section">
+                    <div class="section-header" data-target="offers-content">
+                        <h2>Offers & Discounts</h2>
+                        <i class="fa fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="section-content" id="offers-content">
+                        <div class="offers-list">
+                            <div class="offer-item">
+                                <div class="offer-type">Bank Offer</div>
+                                <div class="offer-details">Upto ₹1,750.00 discount on HDFC Bank Credit Cards, HDFC Bank Debit Cards</div>
+                            </div>
+                            <div class="offer-item">
+                                <div class="offer-type">Cashback</div>
+                                <div class="offer-details">Upto ₹4,077.00 cashback as Amazon Pay Balance when you pay with Amazon Pay ICICI Bank Credit Cards</div>
+                            </div>
+                            <div class="offer-item">
+                                <div class="offer-type">No Cost EMI</div>
+                                <div class="offer-details">Upto ₹8,634.19 EMI interest savings on select Credit Cards</div>
+                            </div>
+                            <div class="offer-item">
+                                <div class="offer-type">Partner Offers</div>
+                                <div class="offer-details">Get GST invoice and save up to 28% on business purchases.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Exchange Options Section -->
+                <div class="expandable-section" id="exchange-section">
+                    <div class="section-header" data-target="exchange-content">
+                        <h2>Exchange & EMI Options</h2>
+                        <i class="fa fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="section-content" id="exchange-content">
+                        <div class="exchange-options">
+                            <div class="option">
+                                <input type="radio" id="with-exchange" name="exchange">
+                                <label for="with-exchange">With Exchange</label>
+                                <span class="discount-amount">Up to ₹ 77,850.00 off</span>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="without-exchange" name="exchange" checked>
+                                <label for="without-exchange">Without Exchange</label>
+                                <span class="price-amount">₹ 135,900.00</span>
+                            </div>
+                        </div>
+                        <div class="emi-options">
+                            <h3>EMI Available</h3>
+                            <p>EMI starts at ₹6,425 per month. EMI options</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Delivery Information Section -->
+                <div class="expandable-section" id="delivery-section">
+                    <div class="section-header" data-target="delivery-content">
+                        <h2>Delivery Information</h2>
+                        <i class="fa fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="section-content" id="delivery-content">
+                        <div class="delivery-info">
+                            <div class="delivery-free">
+                                <span class="free-tag">FREE delivery</span>
+                                <span class="delivery-date">Monday, 5 May</span>.
+                                <a href="#" class="details-link">Details</a>
+                            </div>
+                            <div class="delivery-fastest">
+                                <span class="fastest">Or fastest delivery</span>
+                                <span class="tomorrow-date">Tomorrow, 4 May</span>.
+                                <span class="order-within">Order within 10 hrs 16 mins.</span>
+                                <a href="#" class="details-link">Details</a>
+                            </div>
+                        </div>
+                        
+                        <div class="sold-by">
+                            <span>Sold by</span>
+                            <a href="#" class="seller">Clicktech Retail Private Ltd</a>
+                            <span>and</span>
+                            <a href="#" class="fulfilled">Fulfilled by Amazon</a>.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Features Section -->
+                <div class="expandable-section" id="features-section">
+                    <div class="section-header" data-target="features-content">
+                        <h2>About this item</h2>
+                        <i class="fa fa-chevron-down toggle-icon"></i>
+                    </div>
+                    <div class="section-content" id="features-content">
+                        <div class="product-features" id="tech-specs">
+                            <ul>
+                                <li><strong>PREMIUM DESIGN</strong> — This product features a premium design with a large high-resolution display. It's remarkably durable with the latest-generation protective material that's 2x tougher than standard materials.</li>
+                                <li><strong>ADVANCED AI FEATURES</strong> — Integrated AI features help you write, express yourself and get things done effortlessly. With privacy protections built-in, you can be confident your data stays secure.</li>
+                                <li><strong>PROFESSIONAL CONTROLS</strong> — Intuitive controls give you easier ways to quickly access tools and settings, so you can achieve perfect results in record time.</li>
+                                <li><strong>HIGH QUALITY CAMERA</strong> — Take your videos to a whole new level with high resolution recording with advanced image processing. The multi-lens camera system lets you capture mesmerizing detail in various shooting conditions.</li>
+                                <li><strong>CUSTOMIZABLE EXPERIENCE</strong> — Advanced customization options give you greater creative flexibility. Thanks to the latest software improvements, you can personalize your experience exactly how you want.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Technical Details and Compare Products sections removed from the expandable content -->
+            </div>
+        </div>
+        
+        <!-- Column 3: Product Summary with Interactive Cards -->        
+        <div class="column product-summary">
+            <div class="summary-container">
+                <h2 class="summary-title">Smart Summary</h2>
+                
+                <!-- Card Slider Container -->                
+                <div class="card-slider-container">
+                    <!-- Navigation Arrows -->                    
+                    <button class="card-nav-btn prev-btn" id="prev-card-btn">
+                        <i class="fa fa-chevron-left"></i>
+                    </button>
+                    <button class="card-nav-btn next-btn" id="next-card-btn">
+                        <i class="fa fa-chevron-right"></i>
+                    </button>
+                    
+                    <!-- Cards Wrapper -->                    
+                    <div class="cards-wrapper" id="cards-wrapper">
+                        <!-- Card 1: Key Features -->                        
+                        <div class="summary-card" id="card-1">
+                            <div class="card-header">
+                                <h3>Key Features</h3>
+                                <i class="fa fa-lightbulb feature-icon"></i>
+                            </div>
+                            <div class="card-content">
+                                <ul class="feature-list">
+                                    <li><strong>Design</strong> - Premium construction with enhanced durability</li>
+                                    <li><strong>Performance</strong> - Next-generation processor for superior speed</li>
+                                    <li><strong>Battery</strong> - All-day battery life with fast charging capabilities</li>
+                                    <li><strong>Display</strong> - Cutting-edge display with advanced technology</li>
+                                    <li><strong>Features</strong> - Innovative tools for improved productivity</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Card 2: Review Synthesis -->                        
+                        <div class="summary-card" id="card-2">
+                            <div class="card-header">
+                                <h3>Review Summary</h3>
+                                <i class="fa fa-star-half-alt review-icon"></i>
+                            </div>
+                            <div class="card-content">
+                                <div class="review-summary">
+                                    <div class="review-rating">
+                                        <span class="big-rating">4.5</span>
+                                        <div class="rating-details">
+                                            <div class="stars-container">
+                                                <i class="fa fa-star filled"></i>
+                                                <i class="fa fa-star filled"></i>
+                                                <i class="fa fa-star filled"></i>
+                                                <i class="fa fa-star filled"></i>
+                                                <i class="fa fa-star-half-alt filled"></i>
+                                            </div>
+                                            <span class="review-count">Based on 200+ reviews</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="pros-cons">
+                                        <div class="pros">
+                                            <h4><i class="fa fa-plus-circle"></i> Pros</h4>
+                                            <p>Great Camera, Fast Performance, Premium Build Quality, Excellent Display</p>
+                                        </div>
+                                        <div class="cons">
+                                            <h4><i class="fa fa-minus-circle"></i> Cons</h4>
+                                            <p>High Price, Heavy Weight, Limited Customization Options</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Card 3: User Guidance & Specs -->                        
+                        <div class="summary-card" id="card-3">
+                            <div class="card-header">
+                                <h3>Is This For You?</h3>
+                                <i class="fa fa-user-check guidance-icon"></i>
+                            </div>
+                            <div class="card-content">
+                                <div class="user-guidance">
+                                    <p class="guidance-text">Ideal for power users who prioritize camera quality, performance, and premium design. Perfect for professionals and content creators who need reliable, high-end technology.</p>
+                                </div>
+                                
+                                <div class="key-specs">
+                                    <h4>Key Specifications</h4>
+                                    <ul class="specs-list">
+                                        <li><span class="spec-label">Screen:</span> <span class="spec-value screen-size">6.9 inches</span> <span class="spec-value screen-tech">High Resolution</span></li>
+                                        <li><span class="spec-label">Storage:</span> <span class="spec-value storage-capacity">256GB</span></li>
+                                        <li><span class="spec-label">Processor:</span> <span class="spec-value processor-model">Latest Gen</span></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="quick-compare">
+                                    <a href="#" class="compare-link">
+                                        <i class="fa fa-exchange-alt"></i> Compare Models
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card Position Indicators -->                    
+                    <div class="card-indicators">
+                        <span class="indicator active" data-card="1"></span>
+                        <span class="indicator" data-card="2"></span>
+                        <span class="indicator" data-card="3"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sections Below Main Product View -->
+    <div class="below-product-sections">
+        <!-- Product Images Gallery Section -->
+        <section id="gallery-section" class="product-section">
+            <div class="section-container">
+                <h2 class="section-title">Product Gallery</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="images/Gallery photo 1.jpg" alt="iPhone 16 Pro Max Gallery Image 1" class="gallery-image">
+                        <div class="gallery-caption">Front view with iOS 18 interface</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/Gallery photo 2.webp" alt="iPhone 16 Pro Max Gallery Image 2" class="gallery-image">
+                        <div class="gallery-caption">Rear camera system with titanium frame</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/Gallery photo 3.webp" alt="iPhone 16 Pro Max Gallery Image 3" class="gallery-image">
+                        <div class="gallery-caption">Size comparison with previous models</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Info/Details Section -->
+        <section id="info-details-section" class="product-section">
+            <div class="section-container">
+                <h2 class="section-title">Technical Specifications & Details</h2>
+                
+                <div class="specs-container">
+                    <div class="specs-column">
+                        <h3>Display</h3>
+                        <ul class="specs-list">
+                            <li><strong>Size:</strong> <span class="spec-value">17.43 cm (6.9-inch) High-Resolution display</span></li>
+                            <li><strong>Resolution:</strong> <span class="spec-value">2796 x 1290-pixel resolution at 460 ppi</span></li>
+                            <li><strong>Technology:</strong> <span class="spec-value">Advanced display technology with adaptive refresh rates</span></li>
+                            <li><strong>Brightness:</strong> <span class="spec-value">High brightness for all lighting conditions including outdoor use</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="specs-column">
+                        <h3>Camera</h3>
+                        <ul class="specs-list">
+                            <li><strong>Main:</strong> <span class="spec-value">High-resolution main camera with advanced sensor</span></li>
+                            <li><strong>Secondary:</strong> <span class="spec-value">Wide-angle lens with large field of view</span></li>
+                            <li><strong>Zoom:</strong> <span class="spec-value">Telephoto lens with optical zoom capability</span></li>
+                            <li><strong>Front:</strong> <span class="spec-value">Advanced selfie camera with portrait capabilities</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="specs-column">
+                        <h3>Power & Battery</h3>
+                        <ul class="specs-list">
+                            <li><strong>Processor:</strong> <span class="spec-value">Latest generation chipset with multi-core design</span></li>
+                            <li><strong>Battery Life:</strong> <span class="spec-value">Long-lasting battery for all-day use</span></li>
+                            <li><strong>Charging:</strong> <span class="spec-value">Multiple charging options including wireless</span></li>
+                            <li><strong>Fast Charge:</strong> <span class="spec-value">Rapid charging capability with compatible adapters</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Compare Products Section -->
+                <div class="compare-products-section">
+                    <h3>Compare Similar Products</h3>
+                    <div class="comparison-table-wrapper">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>This Product</th>
+                                    <th>Base Model</th>
+                                    <th>Premium Plus</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Display</td>
+                                    <td>6.9" High-Res</td>
+                                    <td>6.1" Standard</td>
+                                    <td>6.9" Ultra</td>
+                                </tr>
+                                <tr>
+                                    <td>Storage</td>
+                                    <td>256GB</td>
+                                    <td>128GB</td>
+                                    <td>512GB</td>
+                                </tr>
+                                <tr>
+                                    <td>Camera</td>
+                                    <td>Triple Lens</td>
+                                    <td>Dual Lens</td>
+                                    <td>Quad Lens</td>
+                                </tr>
+                                <tr>
+                                    <td>Battery</td>
+                                    <td>All Day</td>
+                                    <td>Standard</td>
+                                    <td>Extended</td>
+                                </tr>
+                                <tr>
+                                    <td>Price</td>
+                                    <td>₹135,900</td>
+                                    <td>₹89,900</td>
+                                    <td>₹159,900</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="comparison-note">
+                        <p>* Specifications may vary. See individual product pages for detailed information.</p>
+                    </div>
+                </div>
+                
+                <div class="in-the-box">
+                    <h3>What's in the Box</h3>
+                    <div class="box-contents">
+                        <div class="box-item">
+                            <span class="item-icon"><i class="fa fa-mobile-alt"></i></span>
+                            <span class="item-name">Device with latest OS</span>
+                        </div>
+                        <div class="box-item">
+                            <span class="item-icon"><i class="fa fa-plug"></i></span>
+                            <span class="item-name">Charging Cable</span>
+                        </div>
+                        <div class="box-item">
+                            <span class="item-icon"><i class="fa fa-book"></i></span>
+                            <span class="item-name">Documentation</span>
+                        </div>
+                    </div>
+                    <p class="note">NOTE: Power adapter sold separately</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer Reviews Section -->
+        <section id="reviews-section" class="product-section">
+            <div class="section-container">
+                <h2 class="section-title">Customer Reviews</h2>
+                
+                <div class="reviews-summary">
+                    <div class="rating-overview">
+                        <div class="big-rating-display">
+                            <span class="big-rating-number">4.3</span>
+                            <div class="stars-display">
+                                <i class="fa fa-star filled"></i>
+                                <i class="fa fa-star filled"></i>
+                                <i class="fa fa-star filled"></i>
+                                <i class="fa fa-star filled"></i>
+                                <i class="fa fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-count">192 ratings</span>
+                        </div>
+                        
+                        <div class="rating-bars">
+                            <div class="rating-bar-item">
+                                <span class="star-count">5<i class="fa fa-star"></i></span>
+                                <div class="bar-container">
+                                    <div class="bar" style="width: 68%;"></div>
+                                </div>
+                                <span class="percentage">68%</span>
+                            </div>
+                            <div class="rating-bar-item">
+                                <span class="star-count">4<i class="fa fa-star"></i></span>
+                                <div class="bar-container">
+                                    <div class="bar" style="width: 20%;"></div>
+                                </div>
+                                <span class="percentage">20%</span>
+                            </div>
+                            <div class="rating-bar-item">
+                                <span class="star-count">3<i class="fa fa-star"></i></span>
+                                <div class="bar-container">
+                                    <div class="bar" style="width: 7%;"></div>
+                                </div>
+                                <span class="percentage">7%</span>
+                            </div>
+                            <div class="rating-bar-item">
+                                <span class="star-count">2<i class="fa fa-star"></i></span>
+                                <div class="bar-container">
+                                    <div class="bar" style="width: 3%;"></div>
+                                </div>
+                                <span class="percentage">3%</span>
+                            </div>
+                            <div class="rating-bar-item">
+                                <span class="star-count">1<i class="fa fa-star"></i></span>
+                                <div class="bar-container">
+                                    <div class="bar" style="width: 2%;"></div>
+                                </div>
+                                <span class="percentage">2%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="featured-reviews">
+                    <h3>Featured Reviews</h3>
+                    
+                    <div class="review-card">
+                        <div class="reviewer-info">
+                            <span class="reviewer-name">Rahul K.</span>
+                            <div class="reviewer-verification">
+                                <i class="fa fa-check-circle"></i> Verified Purchase
+                            </div>
+                        </div>
+                        <div class="review-rating">
+                            <div class="stars">
+                                <i class="fa fa-star filled"></i>
+                                <i class="fa fa-star filled"></i>
+                                <i class="fa fa-star filled"></i>
+                                <i class="fa fa-star filled"></i>
+                                <i class="fa fa-star filled"></i>
+                            </div>
+                            <span class="review-date">Reviewed on 15 April 2025</span>
+                        </div>
+                        <h4 class="review-title">Best iPhone ever, but at a premium price</h4>
+                        <p class="review-text">The iPhone 16 Pro Max is everything Apple promised and more. The titanium design feels premium in hand and the battery life is phenomenal - I'm easily getting through a full day of heavy use. Camera is outstanding, especially in low light. The only drawback is the price, but if you're looking for the best smartphone experience, this is it.</p>
+                        <div class="review-helpful">
+                            <span>56 people found this helpful</span>
+                        </div>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="reviewer-info">
+                            <span class="reviewer-name">Priya M.</span>
+                            <div class="reviewer-verification">
+                                <i class="fa fa-check-circle"></i> Verified Purchase
+                            </div>
+                        </div>
+                        <div class="review-rating">
+                            <div class="stars">
+                                <i class="fa fa-star filled"></i>
+                                <i class="fa fa-star filled"></i>
+                                <i class="fa fa-star filled"></i>
+                                <i class="fa fa-star filled"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                            <span class="review-date">Reviewed on 3 April 2025</span>
+                        </div>
+                        <h4 class="review-title">Great camera system, but heavy</h4>
+                        <p class="review-text">As a photography enthusiast, I'm blown away by the camera capabilities. The 48MP main camera captures incredible detail, and the new Camera Control feature makes adjusting settings much more intuitive. My only complaint is the weight - this phone is noticeably heavier than my previous iPhone, making one-handed use difficult for extended periods.</p>
+                        <div class="review-helpful">
+                            <span>42 people found this helpful</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Express Checkout Modal (Hidden Initially) -->
+    <div class="express-checkout-modal" id="express-checkout-modal">
+        <div class="express-checkout-content">
+            <div class="express-checkout-header">
+                <h2>Express Checkout</h2>
+                <button class="modal-close" id="express-checkout-close">&times;</button>
+            </div>
+            <div class="express-checkout-body">
+                <div class="checkout-summary">
+                    <div class="product-summary">
+                        <img src="images/photo1.jpg" alt="iPhone 16 Pro Max" class="checkout-product-img">
+                        <div class="checkout-product-details">
+                            <h3>iPhone 16 Pro Max 256 GB</h3>
+                            <p>Natural Titanium</p>
+                            <p class="quantity">Qty: 1</p>
+                        </div>
+                    </div>
+                    <div class="price-summary">
+                        <div class="summary-row">
+                            <span>Price:</span>
+                            <span>₹1,35,900.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Delivery:</span>
+                            <span>₹0.00</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total:</span>
+                            <span>₹1,35,900.00</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="payment-section">
+                    <h3>Select Payment Method</h3>
+                    <div class="payment-methods">
+                        <div class="payment-method">
+                            <input type="radio" id="upi" name="payment" checked>
+                            <label for="upi">UPI</label>
+                        </div>
+                        <div class="payment-method">
+                            <input type="radio" id="card" name="payment">
+                            <label for="card">Credit/Debit Card</label>
+                        </div>
+                        <div class="payment-method">
+                            <input type="radio" id="netbanking" name="payment">
+                            <label for="netbanking">Net Banking</label>
+                        </div>
+                        <div class="payment-method">
+                            <input type="radio" id="cod" name="payment">
+                            <label for="cod">Cash On Delivery</label>
+                        </div>
+                    </div>
+                    
+                    <div class="upi-details payment-details active">
+                        <div class="form-group">
+                            <label for="upi-id">UPI ID</label>
+                            <input type="text" id="upi-id" placeholder="yourname@bank">
+                        </div>
+                        <button class="confirm-payment-btn">Pay ₹1,35,900.00</button>
+                    </div>
+                    
+                    <div class="card-details payment-details">
+                        <div class="form-group">
+                            <label for="card-number">Card Number</label>
+                            <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="expiry">Expiry</label>
+                                <input type="text" id="expiry" placeholder="MM/YY">
+                            </div>
+                            <div class="form-group">
+                                <label for="cvv">CVV</label>
+                                <input type="text" id="cvv" placeholder="123">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="card-name">Name on Card</label>
+                            <input type="text" id="card-name" placeholder="John Doe">
+                        </div>
+                        <button class="confirm-payment-btn">Pay ₹1,35,900.00</button>
+                    </div>
+                </div>
+                
+                <div class="checkout-note">
+                    <p>This is a mock checkout flow for demonstration purposes only. No actual transaction will be processed.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Payment Success Modal (Hidden Initially) -->
+    <div class="payment-success-modal" id="payment-success-modal">
+        <div class="success-content">
+            <div class="success-icon">
+                <i class="fa fa-check-circle"></i>
+            </div>
+            <h2>Payment Successful!</h2>
+            <p>Your order has been placed successfully.</p>
+            <p class="order-id">Order ID: #AMZN928461</p>
+            <p class="delivery-note">Your order will be delivered by May 5, 2025</p>
+            <button class="close-success-btn" id="close-success-btn">Continue Shopping</button>
+        </div>
+    </div>
+
+    <!-- Footer Section (Simplified) -->
+    <footer>
+        <div class="back-to-top">
+            <a href="#">Back to top</a>
+        </div>
+        <div class="footer-content">
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Get to Know Us</h3>
+                    <a href="#">About Us</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Press Releases</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect with Us</h3>
+                    <a href="#">Facebook</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">Instagram</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Make Money with Us</h3>
+                    <a href="#">Sell on Amazon</a>
+                    <a href="#">Become an Affiliate</a>
+                    <a href="#">Advertise Your Products</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Let Us Help You</h3>
+                    <a href="#">COVID-19 and Amazon</a>
+                    <a href="#">Your Account</a>
+                    <a href="#">Returns Centre</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <img src="images/video_files/11Sa2OpQXzL.png" alt="Amazon">
+                </div>
+                <div class="copyright">
+                    <p>© 1996-2025, Amazon.com, Inc. or its affiliates</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html> 
